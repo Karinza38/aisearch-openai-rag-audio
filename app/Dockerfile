@@ -9,7 +9,7 @@ RUN npm install
 RUN npm run build
 
 # Stage 2: Serve the built app with a static file server
-FROM python:3.12-slim AS production-stage
+FROM python:3.13.2-slim AS production-stage
 
 WORKDIR /app
 COPY --from=build-stage /backend/static /app/static
